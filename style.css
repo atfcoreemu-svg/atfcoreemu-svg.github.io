@@ -34,3 +34,15 @@ h3{font-size:clamp(1.65rem,3vw,2.3rem);line-height:1.15;margin:.45rem 0 .8rem;le
 .footer{border-top:1px solid var(--line);border-bottom:0;font-size:.9rem}
 @media(max-width:42rem){.cards{grid-template-columns:1fr}.shell{width:calc(100% - 2rem)}.footer{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Ordered-dither motif rendered at native pixels, with a restrained CRT border. */
+body{background:var(--base)}
+.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:2rem;align-items:center}
+.hero-copy{position:relative;z-index:1}
+.hero-art{aspect-ratio:16/11;background:var(--base) url("dither.png") center/100% 100% no-repeat;image-rendering:pixelated;border:1px solid var(--line);position:relative}
+.hero-art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#0c0c0e25 3px 4px);pointer-events:none}
+.card{border-radius:.35rem}
+.featured{background:linear-gradient(130deg,#221811,var(--panel) 65%)}
+.status,.brand,.meta{font-family:ui-monospace,monospace}
+@media(max-width:55rem){.hero{gap:1rem}.hero h1{font-size:clamp(2.8rem,7.5vw,5rem)}}
+@media(max-width:42rem){.hero{grid-template-columns:1fr;gap:1.6rem}.hero-art{aspect-ratio:2/1;background-size:cover}}
