@@ -46,3 +46,10 @@ body{background:var(--base)}
 .status,.brand,.meta{font-family:ui-monospace,monospace}
 @media(max-width:55rem){.hero{gap:1rem}.hero h1{font-size:clamp(2.8rem,7.5vw,5rem)}}
 @media(max-width:42rem){.hero{grid-template-columns:1fr;gap:1.6rem}.hero-art{aspect-ratio:2/1;background-size:cover}}
+
+.languages{display:flex;flex-wrap:wrap;gap:.35rem .95rem;justify-content:flex-end;font-size:.875rem}
+.languages a{color:var(--muted);font-weight:650;text-decoration:none}
+.languages a[aria-current=page]{color:var(--orange);text-decoration:underline}
+:lang(ja) h1,:lang(zh-Hans) h1{letter-spacing:-.04em;font-size:clamp(2.8rem,6.3vw,5.4rem);line-height:1.12}
+:lang(ru) h1{font-size:clamp(2.8rem,7vw,5.8rem)}
+@media(max-width:34rem){.masthead{align-items:flex-start;flex-direction:column}.languages{justify-content:flex-start}}
